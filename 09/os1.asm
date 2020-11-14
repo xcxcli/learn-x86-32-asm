@@ -53,7 +53,7 @@ _roll_screen:
 	cmp ax,2000
 	jl print_char.exit
 	push ds
-	mov ax,8b00H
+	mov ax,0b800H
 	mov ds,ax
 	cld
 	mov si,80*2
