@@ -184,6 +184,7 @@ allocate_memory: ;(ecx)
 	mov ebx,eax
 	add eax,ecx
 	mov ecx,ebx
+	mov ebx,eax
 	and ebx,0fffffffcH
 	add ebx,4
 	test eax,3
@@ -393,7 +394,7 @@ load_program.salt:
 		push edi
 		push esi
 		mov ecx,salt_l/4
-		rep cmpsd
+		repe cmpsd
 		jnz load_program.jump
 		mov eax,[esi]
 		mov [es:edi-salt_l],eax
